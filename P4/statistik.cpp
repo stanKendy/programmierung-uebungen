@@ -4,7 +4,6 @@
 
 #include "statistik.h"
 #include <vector>
-#include <cmath>
 #include<iostream>
 int main() {
     using namespace std;
@@ -33,7 +32,7 @@ int main() {
     if (n == m)
     {
 
-        cout <<"The correlation = "<<correlation(a, b) << endl;
+        summary(a,b);
     }
     else {
         cout <<"Both Vectors muss have the same number of elements to calcule the correlation";

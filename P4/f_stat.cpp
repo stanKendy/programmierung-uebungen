@@ -1,6 +1,8 @@
 #include "statistik.h"
 #include <cmath>
 #include <vector>
+#include<utility>
+#include <fstream>
 //
 // Created by stanley on 11/10/26.
 //
@@ -53,7 +55,7 @@ void summary(const std::vector<double> &v) {
     cout <<"AAD = "<<aad(v) << endl;
 }
 
-double correlation(const std::vector<double> &x, const std::vector<double> &y) {
+double covariance (const std::vector<double> &x, const std::vector<double> &y) {
     double X =standard_deviation(x);
     double Y =standard_deviation(y);
     double s = 0;
@@ -63,8 +65,20 @@ double correlation(const std::vector<double> &x, const std::vector<double> &y) {
         double c = a * b;
         s = s + c;
     }
-
-    double k = s / (static_cast<double>(x.size())- 1);
+    double k = s / static_cast<double>(x.size()-1);
+    return k;
+}
+double correlation(const std::vector<double> &x, const std::vector<double> &y) {
+    double k = covariance(x, y);
+    double X =standard_deviation(x);
+    double Y =standard_deviation(y);
     double correlation =k /(X*Y);
     return correlation;
 }
+
+void summary(const std::vector<double> &x, const std::vector<double> &y) {
+    std::cout <<"The covariance = "<<covariance(x, y) << std::endl;
+
+    std::cout <<"The correlation = "<<correlation(x, y) << std::endl;
+}
+
