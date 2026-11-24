@@ -10,6 +10,7 @@ add_executable(first_project
         P5/vector.cpp
         P5/vector.h
         P5/f_vector.cpp
+        P6/Map.cpp
 )
 
 add_executable(second_project P2/main2.cpp
@@ -19,3 +20,4 @@ add_executable(third_project P3/anhalte.cpp P3/funktion.cpp P3/anhalte.h)
 add_executable(fourth_project P4/statistik.cpp P4/f_stat.cpp P4/statistik.h)
 
 add_executable(fiveth_project P5/vector.cpp P5/f_vector.cpp P5/vector.h P5/data.txt)
+add_executable(sixth_project P6/Map.cpp P6/data.txt)
